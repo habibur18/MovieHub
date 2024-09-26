@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import LanguageSwitcher from "./LanguageSwitcher";
+import ThemeToggle from "./ThemeToggle";
 
 export default function Header() {
   return (
@@ -19,13 +20,16 @@ export default function Header() {
               <Image src="/ring.svg" width="24" height="24" alt="" />
             </Link>
           </li>
-          <li>
+          {/* <li>
             <Link
               className="bg-primary/20 dark:bg-primary/[7%] rounded-lg backdrop-blur-[2px] p-1 inline-block"
               href="#"
             >
               <Image src="/icons/sun.svg" width="24" height="24" alt="" />
             </Link>
+          </li> */}
+          <li>
+            <ThemeToggle />
           </li>
           <li>
             <Link
@@ -36,8 +40,8 @@ export default function Header() {
             </Link>
           </li>
         </ul>
+        <LanguageSwitcher />
       </nav>
-      <LanguageSwitcher />
     </header>
   );
 }

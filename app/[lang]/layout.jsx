@@ -1,4 +1,5 @@
 import localFont from "next/font/local";
+import Provider from "../ui/Provider";
 import Footer from "./components/Footer";
 import Header from "./components/Header";
 import Sidebar from "./components/Sidebar";
@@ -27,16 +28,18 @@ export default async function RootLayout({ children, params }) {
   const dictionary = await getDictionary(lang);
 
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <Header />
-        <div className="container grid lg:grid-cols-[218px_1fr] gap-[3.5rem]">
-          <Sidebar dictionary={dictionary} />
-          <div className="content">{children}</div>
-        </div>
-        <Footer dictionary={dictionary} />
+        <Provider>
+          <Header />
+          <div className="container grid lg:grid-cols-[218px_1fr] gap-[3.5rem]">
+            <Sidebar dictionary={dictionary} />
+            <div className="content">{children}</div>
+          </div>
+          <Footer dictionary={dictionary} />
+        </Provider>
       </body>
     </html>
   );
