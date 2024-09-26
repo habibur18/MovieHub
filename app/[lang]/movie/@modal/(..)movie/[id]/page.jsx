@@ -6,7 +6,7 @@ import Image from "next/image";
 export default async function SingleMoviePage({ params: { lang, id } }) {
   const dictionary = await getDictionary(lang);
   const movie = await getMovieById(id);
-  console.log(movie);
+  console.log("from Intercepted route", movie);
   return (
     <Modal>
       {/* <MovieDetails movie={movie} dictionary={dictionary} /> */}
