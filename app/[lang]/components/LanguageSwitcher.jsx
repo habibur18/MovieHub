@@ -63,10 +63,10 @@ const LanguageSwitcher = () => {
               <li
                 key={entry.code}
                 onClick={() => handleLanguageChange(entry.code)}
-                className="flex items-center gap-2 p-2 rounded-md cursor-pointer hover:bg-gray-100"
+                className="flex items-center gap-2 p-2 rounded-md cursor-pointer hover:bg-green-600/25"
               >
                 <Image
-                  className="max-w-8"
+                  className="max-w-8 rounded-full"
                   src={entry.src}
                   alt="bangla"
                   height={100}
