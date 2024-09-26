@@ -23,10 +23,11 @@ export const metadata = {
 
 export default async function RootLayout({ children, params }) {
   const { lang } = params;
+  console.log(params);
   const dictionary = await getDictionary(lang);
 
   return (
-    <html lang={lang}>
+    <html lang="en">
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
