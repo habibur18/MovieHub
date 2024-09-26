@@ -1,5 +1,5 @@
+import Provider from "@/providers/Provider";
 import localFont from "next/font/local";
-import Provider from "../ui/Provider";
 import Footer from "./components/Footer";
 import Header from "./components/Header";
 import Sidebar from "./components/Sidebar";
